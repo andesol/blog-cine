@@ -1,0 +1,32 @@
+---
+layout: base.njk
+pagination: 
+  data: reviews.list
+  size: 1
+  alias: review
+permalink: "blog/{{review.title | slug}}/"
+---
+
+<article class="post">
+  <header class="post__header">
+    <h1>{{ review.title }}</h1>
+    <div class="post__details">
+      <time datetime="{{ page.date | htmlDateString }}">
+        {{ page.date | readableDate }}
+      </time>
+      <span> | </span>
+      <span>{{ review | readingTime }} read</span>
+    </div>
+  </header>
+  <main class="post__content">
+    {{ review.content | safe }}
+  </main>
+  <aside class="post__aside">
+    <div class="post__tags">
+      {% for tag in review.tags | pageTags %}
+        {% set tagUrl %}/tags/{{ tag }}/{% endset %}
+        <a href="{{ tag | url }}">#{{ tag }}</a>
+      {% endfor %}
+    </div>
+  </aside>
+</article>

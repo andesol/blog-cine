@@ -1,0 +1,28 @@
+{
+  "name": "Cinèfil de poble",
+  "description": "Ressenyes de pel·lícules",
+  "url": "",
+  "author": {
+    "name": "andesol"
+  },
+  "headerLinks": [
+    {
+      "text": "Articles",
+      "url": "/blog",
+      "external": false
+    },
+    {
+      "text": "Sobre",
+      "url": "/about",
+      "external": false
+    }
+  ],
+  "footerLinks": [
+    {
+      "text": "RSS",
+      "url": "/feed.xml",
+      "external": true
+    }
+  ],
+  "showFooterAttribution": true
+}

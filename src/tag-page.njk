@@ -1,0 +1,13 @@
+---
+layout: base.njk
+pagination:
+  data: reviews.tagList
+  size: 1
+  alias: tag
+permalink: /tags/{{ tag }}/
+---
+
+<h1>Tagged “{{ tag }}”</h1>
+
+{% set postlist = reviews.tagList[tag] %}
+{% include "posts-list.njk" %}
