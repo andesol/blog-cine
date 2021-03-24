@@ -13,6 +13,7 @@ module.exports = {
   ],
   output: {
     path: path.resolve(__dirname, 'public', 'assets'),
+    publicPath: '',
     filename: `${baseFilename}.js`,
   },
 
@@ -43,11 +44,17 @@ module.exports = {
           'postcss-loader',
         ],
       },
+      {
+        test: /\.(png|jpg|jpeg|gif|ico|svg)$/,
+        use: [
+          'file-loader'
+        ]
+      }
     ],
   },
 
   plugins: [
-    new WebpackManifestPlugin({ publicPath: '/assets/' }),
+    // new WebpackManifestPlugin({ publicPath: '/public/assets/' }),
     new MiniCssExtractPlugin({ filename: `${baseFilename}.css` }),
   ],
 };

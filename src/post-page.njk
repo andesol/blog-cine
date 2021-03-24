@@ -6,20 +6,19 @@ pagination:
   alias: review
 permalink: "blog/{{review.title | slug}}/"
 ---
-
 <article class="post">
   <header class="post__header">
     <h1>{{ review.title }}</h1>
     <div class="post__details">
       <time datetime="{{ page.date | htmlDateString }}">
-        {{ page.date | readableDate }}
+        {{ review.createdAt | readableDate }}
       </time>
       <span> | </span>
       <span>{{ review | readingTime }} read</span>
     </div>
   </header>
   <main class="post__content">
-    {{ review.content | safe }}
+  {{ review.content.html | safe }}
   </main>
   <aside class="post__aside">
     <div class="post__tags">

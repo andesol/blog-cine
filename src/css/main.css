@@ -12,16 +12,16 @@
   display: grid;
   grid-template-rows: auto minmax(0, 1fr) auto;
   min-height: 100%;
+  width: 90%;
+  max-width: 700px;
+  margin: 0 auto; 
 }
 
 .main {
   display: flex;
   padding-bottom: 4rem;
   flex-direction: column;
-  padding-left: 1rem;
-  padding-right: 1rem;
   min-width: 0;
-  max-width: 48.75rem;
   margin-left: auto;
   margin-right: auto;
 }

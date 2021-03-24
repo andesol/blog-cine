@@ -1,19 +1,7 @@
 const fetch = require('node-fetch');
 require("dotenv").config();
 
-const allMoviesQuery = `query {
-    AllMovies {
-      id
-      image {
-        url
-      }
-      content
-      title
-      createdAt
-      tags
-    }
-  }
-  `;
+const allMoviesQuery = require('./query');
 
 /**
  * GraphQL API call
@@ -25,19 +13,20 @@ async function getReviewsFromApi(query) {
     const apiUrl = process.env.API_URL;
     const apiKey = process.env.API_KEY;
 
-    const json = await fetch(apiUrl, {
-        "method": "POST",
-        "headers": {
-            "Content-Type": "application/json",
-            "Authorization": `Bearer ${apiKey}`,
-        },
-        "body": JSON.stringify({query: query})
-        })
-        .then(response => response.json())
-        .then(json => json.data)
-        .catch(err => console.error(err));
-    
-    return json.AllMovies;
+      const json = await fetch(apiUrl, {
+          "method": "POST",
+          "headers": {
+              "Content-Type": "application/json",
+              "Authorization": `Bearer ${apiKey}`,
+          },
+          "body": JSON.stringify({query: query})
+          })
+          .then(response => response.json())
+          .then(json => json.data)
+          .catch(err => console.error(err));
+      
+      return json.AllMovies;
+
 }
 
 /**

@@ -1,3 +1,12 @@
+/* Import fonts */
+/* @font-face {
+  font-family: 'montserratextrabold';
+  src: url('../fonts/montserrat-extrabold.woff2') format('woff2'),
+       url('../fonts/montserrat-extrabold.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+} */
+
 :root {
   --text-xs: 0.75rem;
   --text-sm: 0.875rem;

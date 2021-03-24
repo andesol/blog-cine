@@ -1,2 +1,3 @@
-# Cinema blog
-A simple blog built with 11ty
+# Blog starter 11ty
+
+A simple starter for a blog

@@ -1,0 +1,14 @@
+---
+layout: base
+---
+
+<section class="post-list__wrapper">
+  {% set postlist = reviews.list | head(-10) %}
+  {# {% for review in reviews %}
+    {{review.title}}
+  {% endfor %} #}
+  {% include "posts-list.njk" %}
+
+</section>
+
+<a class="all-posts-link" href="{{ '/blog/' | url }}">Tots els posts</a>

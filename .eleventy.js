@@ -29,6 +29,7 @@ module.exports = function (eleventyConfig) {
 
   eleventyConfig.setDataDeepMerge(true);
   eleventyConfig.addPassthroughCopy({ 'src/images': 'images' });
+  eleventyConfig.addPassthroughCopy({"src/fonts": 'fonts'});
   eleventyConfig.setBrowserSyncConfig({ files: [manifestPath] });
 
   eleventyConfig.addShortcode('bundledcss', function () {
@@ -66,34 +67,6 @@ module.exports = function (eleventyConfig) {
     return array.slice(0, n);
   });
 
-  // eleventyConfig.addCollection('tagList', function (collection) { }
-  //   let tagSet = new Set();
-
-  //   // Create tags collection from global data (reviews from API)
-  //   const collections = collection.getAll();
-  //   const reviews = collections[0].data.reviews;
-
-
-  //   let tagList = {}
-
-  //   for (const review of reviews) {
-
-      
-  //     for (const tag of review.tags) {
-
-  //       if (tag in tagList) {
-          
-  //         tagList[tag].push(review);
-  //       } else {
-  //         tagList[tag] = [review];
-  //       }
-  //     }
-  //   }
-
-  //   console.log(tagList)
-  //   return tagList;
-  // });
-
   eleventyConfig.addFilter('pageTags', (tags) => {
     const generalTags = ['all', 'nav', 'post', 'posts'];
 
@@ -103,6 +76,10 @@ module.exports = function (eleventyConfig) {
       .filter((tag) => {
         return !generalTags.includes(tag);
       });
+  });
+
+  eleventyConfig.addFilter("html", (html) => {
+    return `<div>${html}</div>`
   });
 
 

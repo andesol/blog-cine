@@ -1,0 +1,19 @@
+--- 
+layout: base
+permalink: /blog/
+---
+
+<h1>Tots els posts</h1>
+
+<div class="tags">
+  {% include "tags-list.njk" %}
+</div>
+
+<section class="post-list__wrapper">
+  {% set postlist = reviews.list %}
+  {# {% for review in reviews %}
+    {{review.title}}
+  {% endfor %} #}
+  {% include "posts-list.njk" %}
+
+</section>

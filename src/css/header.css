@@ -2,8 +2,7 @@
   max-width: none;
   width: 100%;
   text-transform: capitalize;
-  text-transform: uppercase;
-  margin-bottom: 3rem;
+  margin-bottom: 2rem;
 }
 
 .header__content {
@@ -13,13 +12,11 @@
   align-items: center;
   margin-left: auto;
   margin-right: auto;
-  max-width: 48.75rem;
-  padding: 1rem;
   margin-top: 1rem;
 }
 
 .site-title {
-  font-size: var(--text-xl);
+  font-family: 'Montserrat';
   margin-top: 1rem;
   margin-bottom: 1rem;
 }
@@ -40,6 +37,7 @@
   font-size: var(--text-base);
   padding-top: 0.5rem;
   padding-bottom: 0.5rem;
+  text-transform: uppercase;
 }
 
 .nav__list a {

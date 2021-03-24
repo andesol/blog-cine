@@ -1,17 +1,30 @@
 .hero {
   display: flex;
   flex-direction: column;
-  background: rgb(255, 210, 12);
-  margin-top: -2rem;
-  margin-left: -5rem;
-  margin-right: -5rem;
-  height: 60vh;
+
+  height: 40vh;
   display: grid;
   place-items: center;
+  color: white;
+  position: relative;
+}
+
+.hero::before {
+  position: absolute;
+  content: '';
+  top:0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 50% 75%;
+  filter: grayscale(100%);
 }
 
 .hero-content {
   padding: 2rem;
+  z-index: 2;
 
   /* background: rgba( 255, 255, 255, 0.45 );
   box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
@@ -23,6 +36,7 @@ border: 1px solid rgba( 255, 255, 255, 0.18 ); */
 
 .hero h1 {
   font-size: var(--text-5xl);
+  color: white;
 }
 
 .hero p {
