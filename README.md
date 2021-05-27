@@ -1,3 +1,4 @@
 # Blog starter 11ty
 
-A simple starter for a blog
+- Static site generator: Eleventy
+- Source of the content: [apirocket](https://www.apirocket.io/)
